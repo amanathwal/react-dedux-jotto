@@ -1,15 +1,16 @@
 import generateRandomWord from '../utils';
+import { FETCH_WORD, MATCH_SUCCESS, GUESSED_WORD } from './actionTypes';
 
 export const  fetchWord = () => {
     return {
-        type: 'FETCH_WORD',
+        type: FETCH_WORD,
         payload: generateRandomWord()
     };
 }
 
 
 export const successMatch = () => ({
-    type: 'MATCH_SUCCESS'
+    type: MATCH_SUCCESS
 });
 
 
@@ -42,7 +43,7 @@ export const guessWord = ( guessedWord ) => {
             }
 
             dispatch({
-                type: 'GUESSED_WORD',
+                type: GUESSED_WORD,
                 payload: {
                     guessedWord,
                     count
